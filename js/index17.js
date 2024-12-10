@@ -1,5 +1,8 @@
 // index.js
 
+// Add this at the top
+console.log('Loading updated version:', new Date().toISOString());
+
 // Main is called from ../common/wrapper.js
 function main({ pane, contextID, glslVersion }) {
     const {
