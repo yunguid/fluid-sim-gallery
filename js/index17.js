@@ -849,21 +849,8 @@ function main({ pane, contextID, glslVersion }) {
     }
 
     const ui = [];
-    ui.push(pane.addInput(PARAMS, 'trailLength', { min: 0, max: 100, step: 1, label: 'Trail Length' }));
-    ui.push(pane.addInput(PARAMS, 'render', {
-        options: {
-            Fluid: 'Fluid',
-            Pressure: 'Pressure',
-            Velocity: 'Velocity',
-        },
-        label: 'Render',
-    }));
-    ui.push(pane.addInput(PARAMS, 'particleDensity', { min: 0.01, max: 0.5, step: 0.01, label: 'Particle Density' }));
-    ui.push(pane.addInput(PARAMS, 'maxVelocity', { min: 1, max: 30, step: 1, label: 'Max Velocity' }));
-    ui.push(pane.addInput(PARAMS, 'touchForceScale', { min: 0.1, max: 2, step: 0.1, label: 'Touch Force Scale' }));
-    ui.push(pane.addButton({ title: 'Reset' }).on('click', onResize));
-    ui.push(pane.addButton({ title: 'Save PNG (p)' }).on('click', savePNG));
-
+    
+    // Keep only audio controls
     const audioFolder = pane.addFolder({ title: 'Audio Controls' });
     audioFolder.addButton({ title: 'Upload Audio' }).on('click', () => {
         audioInput.click();
